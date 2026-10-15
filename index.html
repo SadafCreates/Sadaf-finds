@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sadaf Creates — Gifts, Home Decor & Mugs</title>
+<title>Sadaf Creates — Gifts, Home Decor, Mugs & Outfits</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -190,8 +190,38 @@
   .card.decor .cta{ background: var(--sage-deep); }
   .card.mug .cta{ background: var(--terracotta-deep); }
 
+  .card.outfit .thumb{ background: linear-gradient(150deg, #EBCBDD, #CE93B3); }
+  .card.outfit .thumb svg{ stroke: #7A5468; }
+  .card.outfit .thumb .badge{ background: var(--plum); }
+  .card.outfit .cta{ background: var(--plum); }
+
   .card.muted{ opacity:0.5; pointer-events:none; }
   .card.muted .cta{ background:#b3a794; }
+
+  /* ---------- DISCLOSURE ---------- */
+  .disclosure{
+    max-width:1000px; margin:0 auto; padding:26px 20px 0;
+    text-align:center;
+  }
+  .disclosure p{
+    display:inline-block;
+    font-size:11.5px; color:#8b8072; line-height:1.5;
+    background:#fff; border:1px dashed var(--line);
+    padding:8px 18px; border-radius:20px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{
+    max-width:1000px; margin:0 auto; padding: 10px 20px 40px;
+    text-align:center;
+  }
+  .about h2{
+    font-family:'Cormorant Garamond', serif; font-size:22px; font-weight:600;
+    margin-bottom:8px; color: var(--terracotta-deep);
+  }
+  .about p{
+    font-size:13.5px; color:#6f6558; line-height:1.7; max-width:640px; margin:0 auto;
+  }
 
   /* ---------- SOCIAL ---------- */
   .social{
@@ -210,8 +240,10 @@
 
   footer{
     text-align:center; font-size:11px; color:#b3a794;
-    letter-spacing:1px; padding: 0 0 30px;
+    letter-spacing:1px; padding: 0 20px 30px; line-height:2;
   }
+  footer a{ color: var(--terracotta-deep); text-decoration:none; }
+  footer .fine{ font-size:10px; letter-spacing:0.4px; }
 </style>
 </head>
 <body>
@@ -219,7 +251,7 @@
   <div class="hero">
     <div class="avatar-ring"><span>S</span></div>
     <h1>Sadaf Creates</h1>
-    <p class="tagline">Gifts · Home Decor · Mugs &amp; Tumblers</p>
+    <p class="tagline">Gifts · Home Decor · Mugs · Outfits</p>
     <p class="quote">"Pour yourself a dream, darling."</p>
   </div>
 
@@ -229,7 +261,12 @@
       <button class="filter-btn" data-filter="gift">🎁 Gifts</button>
       <button class="filter-btn" data-filter="decor">🏠 Home Decor</button>
       <button class="filter-btn" data-filter="mug">☕ Mugs &amp; Tumblers</button>
+      <button class="filter-btn" data-filter="outfit">👗 Outfits</button>
     </div>
+  </div>
+
+  <div class="disclosure">
+    <p>💛 Sadaf Creates is reader-supported — when you buy through links here, I may earn a commission at no extra cost to you.</p>
   </div>
 
   <div class="shop">
@@ -1067,7 +1104,7 @@
           <div class="card-meta">
             <span class="price">Shop on Etsy</span>
           </div>
-          <div class="cta">Visit Shop →</div>
+          <div class="cta">Shop Now →</div>
         </div>
       </a>
 
@@ -1082,7 +1119,7 @@
           <div class="card-meta">
             <span class="price">Shop on Etsy</span>
           </div>
-          <div class="cta">Visit Shop →</div>
+          <div class="cta">Shop Now →</div>
         </div>
       </a>
 
@@ -1097,21 +1134,134 @@
           <div class="card-meta">
             <span class="price">Shop on Etsy</span>
           </div>
+          <div class="card-title">WarmSip Studio Co — Etsy Mug Shop</div>
+          <div class="card-meta">
+            <span class="price">Shop on Etsy</span>
+          </div>
           <div class="cta">Visit Shop →</div>
+        </div>
+      </a>
+
+      <!-- ============================================================
+           OUTFITS (placeholder products — replace href="#" with your
+           affiliate link and add target="_blank" rel="noopener")
+      ============================================================ -->
+
+      <!-- Outfit: Floral Summer Midi Dress -->
+      <a class="card outfit" data-cat="outfit" href="#">
+        <div class="thumb">
+          <span class="badge">Outfit</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-.8 0-1.4.6-1.7 1.5L8 10l2.2 1.5L9 21h6l-1.2-9.5L16 10l-2.3-4.5C13.4 4.6 12.8 4 12 4z"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Floral Summer Midi Dress</div>
+          <div class="card-meta">
+            <span class="price">Rs. 1,499</span>
+            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
+          </div>
+          <div class="cta">Shop Now →</div>
+        </div>
+      </a>
+
+      <!-- Outfit: Pastel Knit Cardigan -->
+      <a class="card outfit" data-cat="outfit" href="#">
+        <div class="thumb">
+          <span class="badge">Outfit</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-.8 0-1.4.6-1.7 1.5L8 10l2.2 1.5L9 21h6l-1.2-9.5L16 10l-2.3-4.5C13.4 4.6 12.8 4 12 4z"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Pastel Knit Cardigan</div>
+          <div class="card-meta">
+            <span class="price">Rs. 1,199</span>
+            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
+          </div>
+          <div class="cta">Shop Now →</div>
+        </div>
+      </a>
+
+      <!-- Outfit: High-Waist Mom Jeans -->
+      <a class="card outfit" data-cat="outfit" href="#">
+        <div class="thumb">
+          <span class="badge">Outfit</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-.8 0-1.4.6-1.7 1.5L8 10l2.2 1.5L9 21h6l-1.2-9.5L16 10l-2.3-4.5C13.4 4.6 12.8 4 12 4z"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">High-Waist Mom Jeans</div>
+          <div class="card-meta">
+            <span class="price">Rs. 1,799</span>
+            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.6</span>
+          </div>
+          <div class="cta">Shop Now →</div>
+        </div>
+      </a>
+
+      <!-- Outfit: Satin Slip Skirt -->
+      <a class="card outfit" data-cat="outfit" href="#">
+        <div class="thumb">
+          <span class="badge">Outfit</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-.8 0-1.4.6-1.7 1.5L8 10l2.2 1.5L9 21h6l-1.2-9.5L16 10l-2.3-4.5C13.4 4.6 12.8 4 12 4z"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Satin Slip Skirt</div>
+          <div class="card-meta">
+            <span class="price">Rs. 999</span>
+            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
+          </div>
+          <div class="cta">Shop Now →</div>
+        </div>
+      </a>
+
+      <!-- Outfit: Oversized Graphic Tee -->
+      <a class="card outfit" data-cat="outfit" href="#">
+        <div class="thumb">
+          <span class="badge">Outfit</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-.8 0-1.4.6-1.7 1.5L8 10l2.2 1.5L9 21h6l-1.2-9.5L16 10l-2.3-4.5C13.4 4.6 12.8 4 12 4z"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Oversized Graphic Tee</div>
+          <div class="card-meta">
+            <span class="price">Rs. 699</span>
+            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.5</span>
+          </div>
+          <div class="cta">Shop Now →</div>
+        </div>
+      </a>
+
+      <!-- Outfit: Cozy Knit Two-Piece Set -->
+      <a class="card outfit" data-cat="outfit" href="#">
+        <div class="thumb">
+          <span class="badge">Outfit</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-.8 0-1.4.6-1.7 1.5L8 10l2.2 1.5L9 21h6l-1.2-9.5L16 10l-2.3-4.5C13.4 4.6 12.8 4 12 4z"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Cozy Knit Two-Piece Set</div>
+          <div class="card-meta">
+            <span class="price">Rs. 2,199</span>
+            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
+          </div>
+          <div class="cta">Shop Now →</div>
         </div>
       </a>
 
     </div>
   </div>
 
+  <div class="about">
+    <h2>About Sadaf Creates</h2>
+    <p>Hi, I'm Sadaf! ✨ I curate cute, aesthetic finds — thoughtful gifts, cozy home decor, pretty mugs, and outfits I love — all in one pretty place. Every pick is something I'd happily buy myself. Some links earn me a small commission at no extra cost to you. Happy browsing, darling! 💛</p>
+  </div>
+
   <div class="social">
-    <a href="https://pinterest.com/YOUR-USERNAME" target="_blank" rel="noopener">
+    <a href="https://www.pinterest.com/SadafFinds/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2a10 10 0 0 0-3.5 19.4c0-.9 0-1.9.3-2.8l1.3-5.5s-.3-.7-.3-1.6c0-1.5.9-2.6 2-2.6.9 0 1.4.7 1.4 1.6 0 1-.6 2.4-.9 3.7-.3 1.1.6 2 1.7 2 2 0 3.4-2.6 3.4-5.6 0-2.3-1.6-4-4.5-4-3.3 0-5.3 2.4-5.3 5.1 0 .9.3 1.6.8 2.1.1.1.1.2.1.3l-.3 1c-.1.2-.2.3-.4.2-1.2-.5-2-2.1-2-3.8 0-3.1 2.2-5.9 6.4-5.9 3.4 0 6 2.4 6 5.6 0 3.3-2.1 6-5 6-1 0-1.9-.5-2.2-1.1l-.6 2.3c-.2.9-.8 2-1.2 2.6A10 10 0 1 0 12 2z"/></svg>
       Follow on Pinterest
     </a>
   </div>
 
-  <footer>&copy; 2026 Sadaf Creates</footer>
+  <footer>
+    <p>&copy; 2026 Sadaf Creates · <a href="mailto:sadaf.farooqstudio@gmail.com">sadaf.farooqstudio@gmail.com</a></p>
+    <p class="fine">As an affiliate, I earn from qualifying purchases made through links on this page.</p>
+  </footer>
 
 <script>
   const buttons = document.querySelectorAll('.filter-btn');
