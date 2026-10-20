@@ -3,1252 +3,1238 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sadaf Creates — Gifts, Home Decor, Mugs & Outfits</title>
+<title>Sadaf Creates &mdash; Gifts, Home Decor, Mugs &amp; Outfits</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream: #FBF4EA;
-    --terracotta: #C96F4A;
-    --terracotta-deep: #A85736;
-    --sage: #7C9070;
-    --sage-deep: #56684A;
-    --gold: #C79A45;
-    --plum: #7A5468;
-    --ink: #2B241E;
-    --line: #EADFC9;
-    --card-bg: #ffffff;
+    --cream:#FDF9F3;
+    --cream-deep:#F8F0E3;
+    --ink:#3A2D25;
+    --muted:#8C7B6E;
+    --faint:#C2B09D;
+    --rose:#C0718A;
+    --rose-deep:#A2546F;
+    --rose-soft:#F9E8ED;
+    --gold:#C0964F;
+    --gold-deep:#9C7A38;
+    --gold-soft:#F6EBD4;
+    --line:#EADBC6;
+    --card:#FFFFFF;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html,body{
-    background: var(--cream);
-    color: var(--ink);
-    font-family: 'Jost', sans-serif;
-    -webkit-font-smoothing: antialiased;
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
   }
 
   /* ---------- HERO ---------- */
   .hero{
-    padding: 52px 20px 40px;
-    background: linear-gradient(160deg, #E8B98A 0%, var(--terracotta) 55%, var(--terracotta-deep) 100%);
-    text-align:center;
     position:relative;
     overflow:hidden;
-  }
-  .hero::before{
-    content:"";
-    position:absolute; top:-50px; right:-50px;
-    width:180px; height:180px; border-radius:50%;
-    background: rgba(255,255,255,0.14);
+    text-align:center;
+    padding:72px 24px 64px;
+    background:
+      radial-gradient(520px 340px at 12% 8%, rgba(192,113,138,.14), transparent 60%),
+      radial-gradient(620px 380px at 88% 90%, rgba(192,150,79,.16), transparent 60%),
+      linear-gradient(180deg, #FFFDF9 0%, var(--cream) 100%);
   }
   .hero::after{
     content:"";
-    position:absolute; bottom:-70px; left:-40px;
-    width:160px; height:160px; border-radius:50%;
-    background: rgba(86,104,74,0.18);
+    position:absolute; left:50%; bottom:26px; transform:translateX(-50%);
+    width:120px; height:1px;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
   }
-  .avatar-ring{
-    width:80px; height:80px; border-radius:50%;
-    border:3px solid rgba(255,255,255,0.85);
-    display:flex; align-items:center; justify-content:center;
-    margin: 0 auto 16px; background: var(--cream);
-    position:relative; z-index:2;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  }
-  .avatar-ring span{
-    font-family:'Cormorant Garamond', serif;
-    font-size:30px; color: var(--terracotta-deep);
-    font-style:italic; font-weight:600;
+  .eyebrow{
+    font-size:11px; letter-spacing:4px; text-transform:uppercase;
+    color:var(--gold-deep); font-weight:600; margin-bottom:18px;
   }
   .hero h1{
-    font-family:'Cormorant Garamond', serif;
-    font-weight:600; font-size: 32px; color:#fff;
-    position:relative; z-index:2;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.12);
-    margin-bottom:6px;
+    font-family:'Fraunces',serif; font-weight:600;
+    font-size:clamp(40px, 6.5vw, 60px);
+    letter-spacing:.5px; line-height:1.05; margin-bottom:12px;
   }
+  .hero h1 em{font-style:italic; font-weight:500; color:var(--rose-deep);}
   .hero .tagline{
-    font-size:12px; letter-spacing:2px; text-transform:uppercase;
-    color: rgba(255,255,255,0.92); font-weight:500;
-    position:relative; z-index:2; margin-bottom:14px;
+    font-size:12.5px; letter-spacing:3px; text-transform:uppercase;
+    color:var(--muted); font-weight:500; margin-bottom:16px;
   }
   .hero .quote{
-    font-family:'Cormorant Garamond', serif; font-style:italic;
-    font-size:15px; color:#fff; opacity:0.95;
-    position:relative; z-index:2;
+    font-family:'Fraunces',serif; font-style:italic; font-weight:500;
+    font-size:17px; color:var(--rose-deep);
   }
 
-  /* ---------- FILTER TABS ---------- */
+  /* ---------- STICKY FILTERS ---------- */
   .filters{
-    max-width: 1000px;
-    margin: -24px auto 0;
-    padding: 0 20px;
-    position:relative; z-index:3;
+    position:sticky; top:12px; z-index:60;
+    max-width:860px; margin:0 auto; padding:14px 20px 0;
   }
   .filter-bar{
     display:flex; gap:8px; overflow-x:auto;
-    background:#fff; border-radius:14px;
-    padding:8px; box-shadow: 0 8px 24px rgba(168,87,54,0.14);
+    background:rgba(255,255,255,.88);
+    -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+    border:1px solid var(--line); border-radius:999px;
+    padding:8px 10px;
+    box-shadow:0 12px 32px rgba(150,100,80,.14);
     -ms-overflow-style:none; scrollbar-width:none;
   }
   .filter-bar::-webkit-scrollbar{display:none;}
   .filter-btn{
-    flex:0 0 auto;
-    border:none; background:transparent;
-    padding:10px 18px; border-radius:10px;
-    font-family:'Jost', sans-serif; font-size:13.5px; font-weight:500;
-    color:#8b8072; cursor:pointer; transition: all .2s ease;
-    white-space:nowrap;
+    flex:0 0 auto; border:none; background:transparent; cursor:pointer;
+    padding:10px 20px; border-radius:999px;
+    font-family:'Inter',sans-serif; font-size:13.5px; font-weight:500;
+    color:var(--muted); white-space:nowrap;
+    transition:all .22s ease;
   }
+  .filter-btn:hover{background:var(--rose-soft); color:var(--rose-deep);}
   .filter-btn.active{
-    background: var(--terracotta);
-    color:#fff;
+    background:linear-gradient(135deg, var(--rose), var(--rose-deep));
+    color:#fff; box-shadow:0 6px 16px rgba(194,113,138,.35);
   }
-  .filter-btn:not(.active):hover{ background: var(--cream); }
-
-  /* ---------- GRID ---------- */
-  .shop{
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 32px 20px 60px;
-  }
-  .grid{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:16px;
-  }
-  @media (min-width: 640px){
-    .grid{ grid-template-columns: repeat(3, 1fr); gap:20px; }
-  }
-
-  .card{
-    background: var(--card-bg);
-    border:1px solid var(--line);
-    border-radius:16px;
-    overflow:hidden;
-    text-decoration:none;
-    color: var(--ink);
-    display:flex; flex-direction:column;
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .card:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(168,87,54,0.16);
-  }
-  .card.hidden{ display:none; }
-
-  .thumb{
-    aspect-ratio: 1 / 1;
-    display:flex; align-items:center; justify-content:center;
-    position:relative;
-  }
-  .thumb svg{ width:38%; height:38%; }
-  .thumb .badge{
-    position:absolute; top:8px; left:8px;
-    font-size:9.5px; letter-spacing:1px; text-transform:uppercase;
-    font-weight:600; padding:4px 8px; border-radius:20px;
-    color:#fff;
-  }
-
-  .card.gift .thumb{ background: linear-gradient(150deg, #F3D9A8, #E8B85E); }
-  .card.gift .thumb svg{ stroke:#8a6516; }
-  .card.gift .thumb .badge{ background: var(--gold); }
-
-  .card.decor .thumb{ background: linear-gradient(150deg, #C9D6BE, #93A981); }
-  .card.decor .thumb svg{ stroke: var(--sage-deep); }
-  .card.decor .thumb .badge{ background: var(--sage-deep); }
-
-  .card.mug .thumb{ background: linear-gradient(150deg, #F0BFA0, #DB8A5F); }
-  .card.mug .thumb svg{ stroke: var(--terracotta-deep); }
-  .card.mug .thumb .badge{ background: var(--terracotta-deep); }
-
-  .card-body{
-    padding:12px 14px 14px;
-    display:flex; flex-direction:column; gap:6px; flex:1;
-  }
-  .card-title{
-    font-size:13.5px; font-weight:600; line-height:1.3;
-    min-height: 2.6em;
-  }
-  .card-meta{
-    display:flex; align-items:center; justify-content:space-between;
-    font-size:12px; color:#9c8f7e;
-  }
-  .price{ font-weight:600; color: var(--ink); font-size:14px; }
-  .rating{ display:flex; align-items:center; gap:3px; }
-  .rating svg{ width:11px; height:11px; fill: var(--gold); }
-
-  .cta{
-    margin-top:4px;
-    display:flex; align-items:center; justify-content:center; gap:6px;
-    background: var(--ink); color:#fff;
-    font-size:12px; font-weight:500; letter-spacing:0.3px;
-    padding:9px; border-radius:8px;
-    transition: background .2s ease;
-  }
-  .card.gift .cta{ background: var(--gold); }
-  .card.decor .cta{ background: var(--sage-deep); }
-  .card.mug .cta{ background: var(--terracotta-deep); }
-
-  .card.outfit .thumb{ background: linear-gradient(150deg, #EBCBDD, #CE93B3); }
-  .card.outfit .thumb svg{ stroke: #7A5468; }
-  .card.outfit .thumb .badge{ background: var(--plum); }
-  .card.outfit .cta{ background: var(--plum); }
-
-  .card.muted{ opacity:0.5; pointer-events:none; }
-  .card.muted .cta{ background:#b3a794; }
 
   /* ---------- DISCLOSURE ---------- */
   .disclosure{
-    max-width:1000px; margin:0 auto; padding:26px 20px 0;
-    text-align:center;
+    max-width:860px; margin:26px auto 0; padding:0 24px; text-align:center;
   }
   .disclosure p{
     display:inline-block;
-    font-size:11.5px; color:#8b8072; line-height:1.5;
-    background:#fff; border:1px dashed var(--line);
-    padding:8px 18px; border-radius:20px;
+    font-size:12px; color:var(--muted); line-height:1.6;
+    background:#fff; border:1px dashed var(--gold);
+    padding:10px 22px; border-radius:999px;
+    box-shadow:0 4px 14px rgba(150,100,80,.07);
   }
+
+  /* ---------- SHOP ---------- */
+  .shop{max-width:1120px; margin:0 auto; padding:8px 24px 72px;}
+  .section-head{
+    display:flex; align-items:center; gap:18px;
+    margin:34px 0 30px;
+  }
+  .section-head .rule{flex:1; height:1px; background:var(--line);}
+  .section-head h2{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:500;
+    font-size:26px; color:var(--ink); white-space:nowrap;
+  }
+  .grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:18px;
+  }
+  @media (min-width:720px){ .grid{grid-template-columns:repeat(3,1fr); gap:22px;} }
+  @media (min-width:1080px){ .grid{grid-template-columns:repeat(4,1fr);} }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:22px;
+    overflow:hidden;
+    text-decoration:none; color:var(--ink);
+    display:flex; flex-direction:column;
+    box-shadow:0 6px 20px rgba(150,100,80,.07);
+    transition:transform .28s ease, box-shadow .28s ease;
+  }
+  .card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 20px 44px rgba(162,84,111,.16);
+  }
+  .card.hidden{display:none;}
+
+  .thumb{
+    aspect-ratio:1/1; position:relative; overflow:hidden;
+    background:var(--cream-deep);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .thumb img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    transition:transform .55s ease;
+  }
+  .card:hover .thumb img{transform:scale(1.06);}
+  .thumb svg{width:40%; height:40%; stroke:var(--faint);}
+  .thumb .badge{
+    position:absolute; top:12px; left:12px; z-index:2;
+    font-size:10px; letter-spacing:1.6px; text-transform:uppercase; font-weight:600;
+    color:var(--ink);
+    background:rgba(255,255,255,.88);
+    -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+    border:1px solid rgba(234,219,198,.9);
+    padding:6px 12px; border-radius:999px;
+  }
+
+  .card-body{
+    padding:16px 16px 18px;
+    display:flex; flex-direction:column; gap:8px; flex:1;
+  }
+  .card-title{
+    font-family:'Fraunces',serif; font-weight:500;
+    font-size:15.5px; line-height:1.35; min-height:2.7em;
+  }
+  .card-meta{
+    display:flex; align-items:center; justify-content:space-between;
+    font-size:12.5px; color:var(--muted);
+  }
+  .price{font-weight:600; color:var(--gold-deep); font-size:14.5px;}
+  .rating{display:flex; align-items:center; gap:4px;}
+  .rating svg{width:12px; height:12px; fill:var(--gold);}
+
+  .cta{
+    margin-top:6px;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    background:linear-gradient(135deg, var(--rose), var(--rose-deep));
+    color:#fff; font-size:13px; font-weight:600; letter-spacing:.4px;
+    padding:12px; border-radius:13px;
+    transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  }
+  .cta:hover{filter:brightness(1.06); box-shadow:0 8px 20px rgba(194,113,138,.35);}
+  .cta .arrow{transition:transform .2s ease;}
+  .card:hover .cta .arrow{transform:translateX(4px);}
 
   /* ---------- ABOUT ---------- */
   .about{
-    max-width:1000px; margin:0 auto; padding: 10px 20px 40px;
-    text-align:center;
+    max-width:720px; margin:0 auto; padding:20px 24px 44px; text-align:center;
   }
+  .about .eyebrow{margin-bottom:12px;}
   .about h2{
-    font-family:'Cormorant Garamond', serif; font-size:22px; font-weight:600;
-    margin-bottom:8px; color: var(--terracotta-deep);
+    font-family:'Fraunces',serif; font-weight:600; font-size:30px; margin-bottom:14px;
   }
-  .about p{
-    font-size:13.5px; color:#6f6558; line-height:1.7; max-width:640px; margin:0 auto;
-  }
+  .about h2 em{font-style:italic; color:var(--rose-deep);}
+  .about p{font-size:14.5px; color:var(--muted); line-height:1.85; font-weight:300;}
 
   /* ---------- SOCIAL ---------- */
-  .social{
-    max-width:1000px; margin: 10px auto 0; padding: 0 20px 50px;
-    text-align:center;
-  }
+  .social{max-width:720px; margin:0 auto; padding:0 24px 56px; text-align:center;}
   .social a{
-    display:inline-flex; align-items:center; gap:8px;
-    background:#fff; border:1px solid var(--line);
-    padding:12px 22px; border-radius:30px;
-    text-decoration:none; color: var(--ink); font-size:13.5px; font-weight:500;
-    transition: transform .18s ease;
+    display:inline-flex; align-items:center; gap:10px;
+    background:#fff; border:1px solid var(--rose);
+    color:var(--rose-deep);
+    padding:14px 30px; border-radius:999px;
+    text-decoration:none; font-size:14px; font-weight:600; letter-spacing:.3px;
+    box-shadow:0 8px 22px rgba(194,113,138,.14);
+    transition:all .22s ease;
   }
-  .social a:hover{ transform: translateY(-2px); }
-  .social svg{ width:16px; height:16px; stroke: var(--terracotta); }
+  .social a:hover{
+    background:linear-gradient(135deg, var(--rose), var(--rose-deep));
+    color:#fff; transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(194,113,138,.32);
+  }
+  .social svg{width:18px; height:18px; stroke:currentColor;}
 
   footer{
-    text-align:center; font-size:11px; color:#b3a794;
-    letter-spacing:1px; padding: 0 20px 30px; line-height:2;
+    text-align:center; font-size:11.5px; color:var(--faint);
+    letter-spacing:.6px; padding:0 24px 36px; line-height:2.1;
   }
-  footer a{ color: var(--terracotta-deep); text-decoration:none; }
-  footer .fine{ font-size:10px; letter-spacing:0.4px; }
+  footer a{color:var(--rose-deep); text-decoration:none; font-weight:500;}
+  footer a:hover{text-decoration:underline;}
+  footer .fine{font-size:10.5px; letter-spacing:.3px; font-weight:300;}
 </style>
 </head>
 <body>
 
-  <div class="hero">
-    <div class="avatar-ring"><span>S</span></div>
-    <h1>Sadaf Creates</h1>
-    <p class="tagline">Gifts · Home Decor · Mugs · Outfits</p>
-    <p class="quote">"Pour yourself a dream, darling."</p>
-  </div>
+  <header class="hero">
+    <p class="eyebrow">Curated with love</p>
+    <h1>Sadaf <em>Creates</em></h1>
+    <p class="tagline">Gifts &middot; Home Decor &middot; Mugs &middot; Outfits</p>
+    <p class="quote">&ldquo;Pour yourself a dream, darling.&rdquo;</p>
+  </header>
 
   <div class="filters">
-    <div class="filter-bar">
+    <nav class="filter-bar" aria-label="Filter products">
       <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="gift">🎁 Gifts</button>
-      <button class="filter-btn" data-filter="decor">🏠 Home Decor</button>
-      <button class="filter-btn" data-filter="mug">☕ Mugs &amp; Tumblers</button>
-      <button class="filter-btn" data-filter="outfit">👗 Outfits</button>
-    </div>
+      <button class="filter-btn" data-filter="gift">&#x1F381; Gifts</button>
+      <button class="filter-btn" data-filter="decor">&#x1F3E0; Home Decor</button>
+      <button class="filter-btn" data-filter="mug">&#x2615; Mugs &amp; Tumblers</button>
+      <button class="filter-btn" data-filter="outfit">&#x1F457; Outfits</button>
+    </nav>
   </div>
 
   <div class="disclosure">
-    <p>💛 Sadaf Creates is reader-supported — when you buy through links here, I may earn a commission at no extra cost to you.</p>
+    <p>&#x1F49B; Sadaf Creates is reader-supported &mdash; when you buy through links here, I may earn a commission at no extra cost to you.</p>
   </div>
 
-  <div class="shop">
+  <main class="shop">
+    <div class="section-head">
+      <span class="rule"></span>
+      <h2>The Collection</h2>
+      <span class="rule"></span>
+    </div>
     <div class="grid" id="grid">
-
       <!-- Gift: Ceramic Gift Set -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/4-i912060105-s3953952685.html?c=&channelLpJumpArgs=&clickTrackInfo=query:Ceramic+Gift+Pack;nid:912060105;src:LazadaMainSrp;rn:02cce42678c21f494dc32502d2927a2f;region:pk;sku:912060105_PK;price:899;client:desktop;supplier_id:6005051481457;session_id:;biz_source:h5_external;slot:0;utlog_bucket_id:470687;asc_category_id:10000715;item_id:912060105;sku_id:3953952685;shop_id:1223501;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=899&ratingscore=4.611111111111111&review=36&sale=177&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S5b8b1c08d4db441a81c9e2020d1e0dfdm.jpg_800x800q75.avif" alt="Ceramic Gift Set" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Ceramic Gift Set (Pack of 4)</div>
-          <div class="card-meta">
-            <span class="price">Rs. 899</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.6</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S5b8b1c08d4db441a81c9e2020d1e0dfdm.jpg_800x800q75.avif" alt="Ceramic Gift Set" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Ceramic Gift Set (Pack of 4)</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 899</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.6</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Crochet Bouquet -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/-i595005940-s2741470638.html?c=&channelLpJumpArgs=&clickTrackInfo=query:Crochet+Tulip+%26+Butterfly+Bouquet;nid:595005940;src:LazadaMainSrp;rn:a932c459f27aa823548f5e24209f82e5;region:pk;sku:595005940_PK;price:742;client:desktop;supplier_id:6005048487021;session_id:;biz_source:h5_external;slot:0;utlog_bucket_id:470687;asc_category_id:10000715;item_id:595005940;sku_id:2741470638;shop_id:1179273;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=742&ratingscore=4.9496402877697845&review=139&sale=727&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/See3b7d28da264599b5c14f6f2df70f35d.jpg_800x800q80.avif" alt="Crochet Tulip Bouquet" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Crochet Tulip &amp; Butterfly Bouquet</div>
-          <div class="card-meta">
-            <span class="price">Rs. 742</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/See3b7d28da264599b5c14f6f2df70f35d.jpg_800x800q80.avif" alt="Crochet Tulip Bouquet" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Crochet Tulip &amp; Butterfly Bouquet</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 742</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Pearl Ribbon Bow Keychain -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/-i1953633590-s14014881418.html?c=&channelLpJumpArgs=&clickTrackInfo=query:gifts+for+women;nid:1953633590;src:LazadaMainSrp;rn:85442d5f14078c0aa53647803e13964e;region:pk;sku:1953633590_PK;price:293.04;client:desktop;supplier_id:6005102640962;session_id:;biz_source:h5_external;slot:0;utlog_bucket_id:470687;asc_category_id:7730;item_id:1953633590;sku_id:14014881418;shop_id:1445783;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=293.04&ratingscore=4.666666666666667&review=18&sale=161&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/5ac73c40d7b36da6bc5a5c4ec7eb33fe.png_800x800q80.avif" alt="Pearl Ribbon Bow Keychain" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Aesthetic Pearl Ribbon Bow Keychain</div>
-          <div class="card-meta">
-            <span class="price">Rs. 293</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/5ac73c40d7b36da6bc5a5c4ec7eb33fe.png_800x800q80.avif" alt="Pearl Ribbon Bow Keychain" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Aesthetic Pearl Ribbon Bow Keychain</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 293</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Heart Sword Necklace Set -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/2-sets-of-elegant-luxury-arrow-through-the-heart-sword-pendant-necklaceheart-and-sword-necklace-set-romantic-couple-jewelry-double-love-necklace-couple-necklace-suitable-for-women-to-wear-daily-party-wear-anniversary-valentines-day-gift-i1958948291-s14021458760.html?&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/4fe57560c976b653b9e579b243fa8725.jpg_800x800q80.avif" alt="Heart Sword Necklace Set" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Heart &amp; Sword Couple Necklace Set (2pc)</div>
-          <div class="card-meta">
-            <span class="price">Rs. 1,050</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/4fe57560c976b653b9e579b243fa8725.jpg_800x800q80.avif" alt="Heart Sword Necklace Set" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Heart &amp; Sword Couple Necklace Set (2pc)</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 1,050</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Heart Pendant Necklace -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/-i943664472.html?spm=a2a0e.searchlist.list.23.65055bc8lJgCaP&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/c00ac16df4a2639658b1ada740c6e95e.jpg_800x800q75.avif" alt="Golden Heart Pendant Necklace" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Golden Heart Pendant Necklace</div>
-          <div class="card-meta">
-            <span class="price">Rs. 442</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.0</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/c00ac16df4a2639658b1ada740c6e95e.jpg_800x800q75.avif" alt="Golden Heart Pendant Necklace" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Golden Heart Pendant Necklace</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 442</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.0</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Silver Zircon Leaf Necklace -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/-i895910276-s3932080964.html?c=&channelLpJumpArgs=&clickTrackInfo=query:vintage+jewelry;nid:895910276;src:LazadaMainSrp;rn:78c3306cc061790e861d960c33d5a9bb;region:pk;sku:895910276_PK;price:369;client:desktop;supplier_id:6989;session_id:;biz_source:https://www.daraz.pk/;slot:10;utlog_bucket_id:470687;asc_category_id:10001665;item_id:895910276;sku_id:3932080964;shop_id:92110;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=369&ratingscore=4.911111111111111&review=45&sale=213&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpHYU_EuJ78rQLdguH616UNhljWztXGTz9iU0Q2frcDg&s=10" alt="Silver Zircon Leaf Necklace" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Silver Zircon Leaf Pendant Necklace</div>
-          <div class="card-meta">
-            <span class="price">Rs. 369</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpHYU_EuJ78rQLdguH616UNhljWztXGTz9iU0Q2frcDg&s=10" alt="Silver Zircon Leaf Necklace" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Silver Zircon Leaf Pendant Necklace</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 369</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Tulip Bracelet -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/viral-tulip-bracelet-for-girls-trendy-aesthetic-jewelry-gift-high-quality-stainless-steel-bracelets-tarnish-free-i1960644662-s14031057481.html?&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/69755fc1a0b0fa95f65112184850e3d1.jpg_800x800q80.jpg_.webp" alt="Viral Tulip Bracelet" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Viral Tulip Bracelet</div>
-          <div class="card-meta">
-            <span class="price">See price on Daraz</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/69755fc1a0b0fa95f65112184850e3d1.jpg_800x800q80.jpg_.webp" alt="Viral Tulip Bracelet" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Viral Tulip Bracelet</div>
+                <div class="card-meta">
+                  <span class="price">See price on Daraz</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Wooden Sticky Frames Set -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/set-of-3-wooden-sticky-frames-sticky-phototiles-boho-art-boho-wall-art-frames-botanical-boho-art-frame-boho-design-phototile-frames-for-wall-decoration-i945998469-s4008744183.html?&search=pdp_v2v?spm=a2a0e.pdp_revamp.recommendation_2.3.6c3e3144nik77P&mp=1&scm=1007.38553.419544.0&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/b10557a88f7a3f288d30c0162962343e.jpg_800x800q75.avif" alt="Wooden Sticky Frames Set" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Boho Wooden Sticky Photo Frames (Set of 3)</div>
-          <div class="card-meta">
-            <span class="price">Rs. 1,299</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/b10557a88f7a3f288d30c0162962343e.jpg_800x800q75.avif" alt="Wooden Sticky Frames Set" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Boho Wooden Sticky Photo Frames (Set of 3)</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 1,299</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Makeup Vanity Tray -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/-i688103078-s14030952541.html?c=&channelLpJumpArgs=&clickTrackInfo=query:vanity+decor;nid:688103078;src:LazadaMainSrp;rn:fde3130b0f39a6b39e16860544674771;region:pk;sku:688103078_PK;price:999;client:desktop;supplier_id:6005405904140;session_id:;biz_source:h5_external;slot:0;utlog_bucket_id:470687;asc_category_id:1528;item_id:688103078;sku_id:14030952541;shop_id:2139191;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=999&ratingscore=4.63013698630137&review=73&sale=727&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="data:image/jpeg;base64,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" alt="Makeup Organizer Vanity Tray" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Makeup Organizer Vanity Tray</div>
-          <div class="card-meta">
-            <span class="price">Rs. 999</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.6</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="data:image/jpeg;base64,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" alt="Makeup Organizer Vanity Tray" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Makeup Organizer Vanity Tray</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 999</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.6</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Rotating Makeup Brush Organizer -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/360-7-i848057350-s3807723444.html?c=&channelLpJumpArgs=&clickTrackInfo=query:vanity+decor;nid:848057350;src:LazadaMainSrp;rn:6992b26c201c642dbff1f02c69c03cc4;region:pk;sku:848057350_PK;price:699;client:desktop;supplier_id:6005460016337;session_id:;biz_source:h5_external;slot:29;utlog_bucket_id:470687;asc_category_id:1528;item_id:848057350;sku_id:3807723444;shop_id:2263532;templateInfo:-1_A3_C#115931_G#&configId=choice_PK_promotion&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=699&ratingscore=4.9508670520231215&review=1384&sale=7067&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S1683ae9795fe455cb8345ef32c4f8bf0C.png_800x800q80.avif" alt="Rotating Makeup Brush Organizer" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">360° Rotating Makeup Brush Organizer</div>
-          <div class="card-meta">
-            <span class="price">Rs. 699</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S1683ae9795fe455cb8345ef32c4f8bf0C.png_800x800q80.avif" alt="Rotating Makeup Brush Organizer" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">360° Rotating Makeup Brush Organizer</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 699</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Classic Ladies Watch -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/-i947551528-s14018500891.html?c=&channelLpJumpArgs=&clickTrackInfo=query:vintage+style+watches+for+girls;nid:947551528;src:LazadaMainSrp;rn:75ee0c358e81d322161f2eb8f815ee36;region:pk;sku:947551528_PK;price:899;client:desktop;supplier_id:6005045019888;session_id:;biz_source:h5_external;slot:8;utlog_bucket_id:470687;asc_category_id:7759;item_id:947551528;sku_id:14018500891;shop_id:1129611;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=899&ratingscore=4.9423076923076925&review=52&sale=155&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S49c0fff662a746a58dff543c84b2fbec2.jpg_800x800q75.avif" alt="Classic Ladies Watch" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Classic Luxury Ladies Watch</div>
-          <div class="card-meta">
-            <span class="price">Rs. 899</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S49c0fff662a746a58dff543c84b2fbec2.jpg_800x800q75.avif" alt="Classic Ladies Watch" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Classic Luxury Ladies Watch</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 899</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Bow Shape Candle -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/-i943607558-s4003661023.html?c=&channelLpJumpArgs=&clickTrackInfo=query:aesthetic+home+decor;nid:943607558;src:LazadaMainSrp;rn:b923dc4d021028c71d6249658197dbe2;region:pk;sku:943607558_PK;price:196;client:desktop;supplier_id:6005410160545;session_id:;biz_source:https://www.daraz.pk/;slot:0;utlog_bucket_id:470687;asc_category_id:690;item_id:943607558;sku_id:4003661023;shop_id:2150058;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=196&ratingscore=4.590551181102362&review=127&sale=942&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/5426b839e4b3f73f945aa92d58bf4c0b.jpg_800x800q80.avif" alt="Bow Shape Candle" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Bow Shape Candle</div>
-          <div class="card-meta">
-            <span class="price">Rs. 196</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.6</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/5426b839e4b3f73f945aa92d58bf4c0b.jpg_800x800q80.avif" alt="Bow Shape Candle" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Bow Shape Candle</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 196</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.6</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Jesmonite Vase -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/jesmonite-ceramic-female-face-vase-home-decor-head-vasehandmade-aesthetic-home-decor-flower-pot-i405149235-s2553229236.html?c=&channelLpJumpArgs=&clickTrackInfo=query:Jesmonite+Ceramic+Face+Vase;nid:405149235;src:LazadaMainSrp;rn:307b3759e17a54f02ab17f73cab473c5;region:pk;sku:405149235_PK;price:999;client:desktop;supplier_id:6005040678539;session_id:;biz_source:h5_external;slot:1;utlog_bucket_id:470687;asc_category_id:10000431;item_id:405149235;sku_id:2553229236;shop_id:1050001;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=999&ratingscore=4.683937823834197&review=192&sale=974&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S55553e70f7d94060a07a4d4036909722t.jpg_800x800q75.avif" alt="Jesmonite Ceramic Face Vase" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Jesmonite Ceramic Face Vase</div>
-          <div class="card-meta">
-            <span class="price">Rs. 999</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S55553e70f7d94060a07a4d4036909722t.jpg_800x800q75.avif" alt="Jesmonite Ceramic Face Vase" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Jesmonite Ceramic Face Vase</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 999</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Donut Ceramic Vase Set -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/donut-ceramic-vase-2-piece-set-for-pampas-grass-table-and-home-decoration-i946412254-s4009614572.html?&search=pdp_v2v?spm=a2a0e.pdp_revamp.recommendation_2.2.5efd4de7hNo86n&mp=1&scm=1007.38553.419544.0&clickTrackInfo=e0c66428-e73f-43a8-981d-8131d0b670c3__946412254__10000431__hero_item_i2i__419526__0.0__0.024316007271409035__0.0__0.0__0.0__0.0__1____1953955827__1953955827__0.0________2599.0__0.6156213928434013__5.0__8__999.0______________32104____0.0__0.0__0.0__0.0____0.0____0.0__0.0__0.0____________0.0&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S2fb5ba41d91249f0a6dfecc2ee0b09d7b.jpg_2200x2200q80.jpg_.webp" alt="Donut Ceramic Vase Set" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Donut Ceramic Vase Set (2-Piece)</div>
-          <div class="card-meta">
-            <span class="price">Rs. 2,599</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S2fb5ba41d91249f0a6dfecc2ee0b09d7b.jpg_2200x2200q80.jpg_.webp" alt="Donut Ceramic Vase Set" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Donut Ceramic Vase Set (2-Piece)</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 2,599</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Mug: Bubu Dubu -->
       <a class="card mug" data-cat="mug" href="https://www.daraz.pk/products/-i468992612-s2214785266.html?c=&channelLpJumpArgs=&clickTrackInfo=query:Bubu+Dubu+Printed+Mug;nid:468992612;src:LazadaMainSrp;rn:2f3b87ae31f384f859f38c490ec2bc46;region:pk;sku:468992612_PK;price:899;client:desktop;supplier_id:6005018355776;session_id:;biz_source:h5_external;slot:0;utlog_bucket_id:470687;asc_category_id:10000575;item_id:468992612;sku_id:2214785266;shop_id:800694;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=899&ratingscore=5.0&review=2&sale=6&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Mug</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/d9fbf9e6e006e8ef7294efd2e04db254.jpg_800x800q80.avif" alt="Bubu Dubu Printed Mug" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Bubu Dubu Printed Tea &amp; Coffee Mug</div>
-          <div class="card-meta">
-            <span class="price">Rs. 899</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Mug</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/d9fbf9e6e006e8ef7294efd2e04db254.jpg_800x800q80.avif" alt="Bubu Dubu Printed Mug" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Bubu Dubu Printed Tea &amp; Coffee Mug</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 899</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: DIY Wall Mounted Corner Shelf -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/diy-wall-mounted-shelves-wall-mounted-corner-storage-bookshelf-i551202774-s2566924982.html?&search=pdp_v2v?spm=a2a0e.pdp_revamp.recommendation_2.2.450362e4XRdva6&mp=1&scm=1007.38553.419544.0&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://images.weserv.nl/?url=static-01.daraz.pk/p/418d600c2d4ce74a06e732ed5bdc9b67.jpg" alt="DIY Wall Mounted Corner Shelf" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">DIY Wall Mounted Corner Shelf</div>
-          <div class="card-meta">
-            <span class="price">Rs. 999</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.4</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://images.weserv.nl/?url=static-01.daraz.pk/p/418d600c2d4ce74a06e732ed5bdc9b67.jpg" alt="DIY Wall Mounted Corner Shelf" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">DIY Wall Mounted Corner Shelf</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 999</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.4</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Mug: Double Wall Coffee Glass -->
       <a class="card mug" data-cat="mug" href="https://www.daraz.pk/products/450ml350ml250ml-i552678178-s2571573524.html?c=&channelLpJumpArgs=&clickTrackInfo=query:double+wall+coffee+glass;nid:552678178;src:LazadaMainSrp;rn:36d75574fc882f21bb586404e2d1fbcb;region:pk;sku:552678178_PK;price:799;client:desktop;supplier_id:6005234608619;session_id:;biz_source:h5_external;slot:0;utlog_bucket_id:470687;asc_category_id:960;item_id:552678178;sku_id:2571573524;shop_id:1798111;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Khyber Pakhtunkhwa&price=799&ratingscore=4.843478260869565&review=115&sale=540&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Mug</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S2f9eb26b7654461e9dd29392580955171.jpg_800x800q80.jpg_.webp" alt="Double Wall Coffee Glass Mug" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Double Wall Coffee Glass Mug</div>
-          <div class="card-meta">
-            <span class="price">Rs. 799</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Mug</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S2f9eb26b7654461e9dd29392580955171.jpg_800x800q80.jpg_.webp" alt="Double Wall Coffee Glass Mug" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Double Wall Coffee Glass Mug</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 799</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Mug: Doodle Bow Glass Mug -->
-
       <!-- Decor: Flower Mirror -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/mirror-desktop-flower-mirrors-creative-dormitory-desktop-online-celebrity-gao-yan-value-mirrors-for-bedroom-home-decor-mirror-i927520359-s3984669310.html?&search=pdp_v2v?spm=a2a0e.pdp_revamp.recommendation_2.3.604e6260Ej7LQv&mp=1&scm=1007.38553.419544.0&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/6aa4c76baeb073995c752cb147f4f6a2.jpg_800x800q80.jpg_.webp" alt="Flower Mirror" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Desktop Flower Mirror</div>
-          <div class="card-meta">
-            <span class="price">Rs. 999</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/6aa4c76baeb073995c752cb147f4f6a2.jpg_800x800q80.jpg_.webp" alt="Flower Mirror" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Desktop Flower Mirror</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 999</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Mug: Ribbed Glass Sipper -->
       <a class="card mug" data-cat="mug" href="https://www.daraz.pk/products/-i1957242793-s14016491734.html?c=&channelLpJumpArgs=&clickTrackInfo=query:trending+glass+mugs;nid:1957242793;src:LazadaMainSrp;rn:611fe69b5ce1d8c63d0e01e465329f0c;region:pk;sku:1957242793_PK;price:875;client:desktop;supplier_id:1108060;session_id:;biz_source:h5_external;slot:18;utlog_bucket_id:470687;asc_category_id:10000575;item_id:1957242793;sku_id:14016491734;shop_id:218500;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=875&ratingscore=4.72&review=25&sale=98&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Mug</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/5fffb3538591d549f37f03519d9cf11c.jpg_800x800q80.avif" alt="Ribbed Square Glass Sipper Mug" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Ribbed Square Glass Sipper Mug</div>
-          <div class="card-meta">
-            <span class="price">Rs. 875</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Mug</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/5fffb3538591d549f37f03519d9cf11c.jpg_800x800q80.avif" alt="Ribbed Square Glass Sipper Mug" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Ribbed Square Glass Sipper Mug</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 875</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Mug: Heart Pattern Travel Tumbler -->
       <a class="card mug" data-cat="mug" href="https://www.daraz.pk/products/40-i946397270-s4009385448.html?c=&channelLpJumpArgs=&clickTrackInfo=query:heart+pattern+mugs;nid:946397270;src:LazadaMainSrp;rn:6f01fae6b27db1cc4205339f38eaed64;region:pk;sku:946397270_PK;price:4500;client:desktop;supplier_id:6005249808295;session_id:;biz_source:h5_external;slot:1;utlog_bucket_id:470687;asc_category_id:5416;item_id:946397270;sku_id:4009385448;shop_id:1828848;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=4.5E+3&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Tumbler</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S3e268c52f6b54605806fea1edea4cea51.jpg_2200x2200q80.jpg_.webp" alt="Heart Pattern Travel Tumbler" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Heart Pattern Insulated Travel Tumbler 40oz</div>
-          <div class="card-meta">
-            <span class="price">Rs. 4,500</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Tumbler</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S3e268c52f6b54605806fea1edea4cea51.jpg_2200x2200q80.jpg_.webp" alt="Heart Pattern Travel Tumbler" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Heart Pattern Insulated Travel Tumbler 40oz</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 4,500</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
+
       <a class="card mug" data-cat="mug" href="https://www.daraz.pk/products/-i941460885-s4000253089.html?c=&channelLpJumpArgs=&clickTrackInfo=query:aesthetic+glass+mugs;nid:941460885;src:LazadaMainSrp;rn:ee6ddb0790aaedb15f9a4714a74aeae7;region:pk;sku:941460885_PK;price:1199;client:desktop;supplier_id:6005012967040;session_id:;biz_source:h5_external;slot:25;utlog_bucket_id:470687;asc_category_id:10000570;item_id:941460885;sku_id:4000253089;shop_id:497815;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=1199&ratingscore=5.0&review=13&sale=35&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Mug</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/87c1e8e9cd478c6fca8817061e456e46.jpg_2200x2200q80.jpg_.webp" alt="Doodle Bow Glass Mug" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Doodle Bow Glass Cup &amp; Mug Set</div>
-          <div class="card-meta">
-            <span class="price">Rs. 1,199</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Mug</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/87c1e8e9cd478c6fca8817061e456e46.jpg_2200x2200q80.jpg_.webp" alt="Doodle Bow Glass Mug" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Doodle Bow Glass Cup &amp; Mug Set</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 1,199</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Mug: Stanley Tumbler -->
       <a class="card mug" data-cat="mug" href="https://www.daraz.pk/products/stanley-tumbler-with-handle-straw-40oz-premium-stainless-steel-vacuum-insulated-travel-cup-i910947470-s14012787817.html?&search=pdp_v2v?spm=a2a0e.pdp_revamp.recommendation_2.1.4bf34be1dgO4QR&mp=1&scm=1007.38553.419544.0&clickTrackInfo=fd05dac8-02ef-4ad6-9a32-f22c3500ecb2__910947470__10000634__hero_item_i2i__419526__0.0__0.04694249853491783__0.0__0.0__0.0__0.0__0____922331051__922331051__0.0________2999.0__0.2812604201400467__4.676646706586826__167__2155.5__2044046,2040094,2049469,2049468,2039198,2044089,2049543,2039200,1963322,2040302,2040522,2043502,2034232,2043948,2060793,1199863,2036069,2049484,2036059,2051487,2056712,2033700____________32104____0.0__0.0__0.0__0.0____0.0____0.0__0.0__0.0____________0.0&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Tumbler</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/4064a46e1846964c0f1b7e614cf3ab22.jpg_800x800q80.avif" alt="Stanley 40oz Tumbler" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Stanley 40oz Tumbler with Handle &amp; Straw</div>
-          <div class="card-meta">
-            <span class="price">Rs. 2,999</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Tumbler</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/4064a46e1846964c0f1b7e614cf3ab22.jpg_800x800q80.avif" alt="Stanley 40oz Tumbler" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Stanley 40oz Tumbler with Handle &amp; Straw</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 2,999</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Rose Scented Glass Candles -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/pack-of-2-rose-scented-glass-candles-for-aromatherapy-and-home-decor-i220689999-s1434538634.html?c=&channelLpJumpArgs=&clickTrackInfo=query:scented+candles;nid:220689999;src:LazadaMainSrp;rn:3b4c23c1da6836c843a7b12811352425;region:pk;sku:220689999_PK;price:415;client:desktop;supplier_id:1012623;session_id:;biz_source:https://www.daraz.pk/;slot:9;utlog_bucket_id:470687;asc_category_id:10000434;item_id:220689999;sku_id:1434538634;shop_id:124175;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=415&priceCompare=skuId:1434538634;source:lazada-search-voucher;sn:3b4c23c1da6836c843a7b12811352425;originPrice:41500;displayPrice:41500;isGray:false;singlePromotionId:50000084060011;singleToolCode:promPrice;voucherPricePlugin:0;timestamp:1786961666837&qSellingPoint=p--scented&ratingscore=4.435643564356436&request_id=3b4c23c1da6836c843a7b12811352425&review=303&sale=1508&search=1&source=search&spm=a2a0e.searchlist.list.9&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/0dc9a2401ae882ce72895be582ef4dc9.png_2200x2200q80.png_.webp" alt="Rose Scented Glass Candles" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Pack of 2 Rose Scented Glass Candles</div>
-          <div class="card-meta">
-            <span class="price">Rs. 415</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.4</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/0dc9a2401ae882ce72895be582ef4dc9.png_2200x2200q80.png_.webp" alt="Rose Scented Glass Candles" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Pack of 2 Rose Scented Glass Candles</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 415</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.4</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Mini Bubble Candle -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/mini-bubble-candle-1-piece-scented-decorative-wax-cube-for-home-event-decor-i487936871-s2294464503.html?c=&channelLpJumpArgs=&clickTrackInfo=query:scented+candles;nid:487936871;src:LazadaMainSrp;rn:3b4c23c1da6836c843a7b12811352425;region:pk;sku:487936871_PK;price:99;client:desktop;supplier_id:6005052630701;session_id:;biz_source:https://www.daraz.pk/;slot:26;utlog_bucket_id:470687;asc_category_id:10000434;item_id:487936871;sku_id:2294464503;shop_id:1244437;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=99&priceCompare=skuId:2294464503;source:lazada-search-voucher;sn:3b4c23c1da6836c843a7b12811352425;originPrice:9900;displayPrice:9900;isGray:false;singlePromotionId:-1;singleToolCode:mockedSalePrice;voucherPricePlugin:0;timestamp:1786961666837&qSellingPoint=p--scented&ratingscore=4.6692307692307695&request_id=3b4c23c1da6836c843a7b12811352425&review=260&sale=4056&search=1&source=search&spm=a2a0e.searchlist.list.26&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGCSjeHz1nK8rdwa9CG2hOrOy7liy-_pA04wMttcJ8E13O9YoNJTAL1pOr&s=10" alt="Mini Bubble Candle" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Mini Bubble Candle — Scented Wax Cube</div>
-          <div class="card-meta">
-            <span class="price">Rs. 99</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGCSjeHz1nK8rdwa9CG2hOrOy7liy-_pA04wMttcJ8E13O9YoNJTAL1pOr&s=10" alt="Mini Bubble Candle" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Mini Bubble Candle — Scented Wax Cube</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 99</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Vintage Art Spiral Notebook -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/7769-i436147793-s2094614069.html?c=&channelLpJumpArgs=&clickTrackInfo=query:vintage+diaries;nid:436147793;src:LazadaMainSrp;rn:de257fd39881cb0d557a12016258031b;region:pk;sku:436147793_PK;price:240;client:desktop;supplier_id:1990;session_id:;biz_source:h5_external;slot:2;utlog_bucket_id:470687;asc_category_id:10000654;item_id:436147793;sku_id:2094614069;shop_id:87467;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=2.4E 2&priceCompare=skuId:2094614069;source:lazada-search-voucher;sn:de257fd39881cb0d557a12016258031b;originPrice:24000;displayPrice:24000;isGray:false;singlePromotionId:-1;singleToolCode:-1;voucherPricePlugin:0;timestamp:1786962809631&ratingscore=4.7492625368731565&request_id=de257fd39881cb0d557a12016258031b&review=1017&sale=5479&search=1&source=search&spm=a2a0e.searchlist.list.2&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/753aec69a780d5e53ff38189873df821.png_200x200q75.avif" alt="Vintage Art Spiral Notebook" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Vintage Art Spiral Notebook</div>
-          <div class="card-meta">
-            <span class="price">Rs. 240</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/753aec69a780d5e53ff38189873df821.png_200x200q75.avif" alt="Vintage Art Spiral Notebook" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Vintage Art Spiral Notebook</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 240</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Black Leather Shoulder Bag -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/fashion-black-synthetic-leather-summer-shoulder-bag-for-women-tote-crossbody-handbag-i939355477-s3997554854.html?c=&channelLpJumpArgs=&clickTrackInfo=query:bags+for+girls;nid:939355477;src:LazadaMainSrp;rn:346f0cbbbfbbd8a915bfdb64c76ac243;region:pk;sku:939355477_PK;price:546;client:desktop;supplier_id:6005052822023;session_id:;biz_source:https://www.daraz.pk/;slot:2;utlog_bucket_id:470687;asc_category_id:1830;item_id:939355477;sku_id:3997554854;shop_id:1247982;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=546&priceCompare=skuId:3997554854;source:lazada-search-voucher;sn:346f0cbbbfbbd8a915bfdb64c76ac243;originPrice:54600;displayPrice:54600;isGray:false;singlePromotionId:50000084060011;singleToolCode:promPrice;voucherPricePlugin:0;timestamp:1786963266237&qSellingPoint=p--for girls&ratingscore=4.844230769230769&request_id=346f0cbbbfbbd8a915bfdb64c76ac243&review=520&sale=2371&search=1&source=search&spm=a2a0e.searchlist.list.2&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S636ed115718c4136ab9fe461188022fbT.jpg_200x200q80.avif" alt="Black Leather Shoulder Bag" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Black Leather Tote &amp; Crossbody Handbag</div>
-          <div class="card-meta">
-            <span class="price">Rs. 546</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S636ed115718c4136ab9fe461188022fbT.jpg_200x200q80.avif" alt="Black Leather Shoulder Bag" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Black Leather Tote &amp; Crossbody Handbag</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 546</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Anylady Makeup Book Palette -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/-i1947558903-s14011336089.html?c=&channelLpJumpArgs=&clickTrackInfo=query:makeup+gifts;nid:1947558903;src:LazadaMainSrp;rn:b9503c3856dbb11d8c8d42931cb4c473;region:pk;sku:1947558903_PK;price:950;client:desktop;supplier_id:6005515360588;session_id:;biz_source:h5_external;slot:6;utlog_bucket_id:470687;asc_category_id:1533;item_id:1947558903;sku_id:14011336089;shop_id:2389550;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=9.5E 2&priceCompare=skuId:14011336089;source:lazada-search-voucher;sn:b9503c3856dbb11d8c8d42931cb4c473;originPrice:95000;displayPrice:95000;isGray:false;singlePromotionId:-1;singleToolCode:-1;voucherPricePlugin:0;timestamp:1786963507510&ratingscore=5.0&request_id=b9503c3856dbb11d8c8d42931cb4c473&review=2&sale=7&search=1&source=search&spm=a2a0e.searchlist.list.6&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/b6c51a20daca068b044ce6926f2c872c.jpg_2200x2200q80.jpg_.webp" alt="Anylady Makeup Book Palette" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">All-in-One Makeup Book Palette</div>
-          <div class="card-meta">
-            <span class="price">Rs. 950</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/b6c51a20daca068b044ce6926f2c872c.jpg_2200x2200q80.jpg_.webp" alt="Anylady Makeup Book Palette" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">All-in-One Makeup Book Palette</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 950</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Vintage Leather Travel Jewellery Box -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/vintage-leather-travel-jewellery-box-for-women-elegant-hair-accessories-organizer-case-i457530251-s4008977404.html?c=&channelLpJumpArgs=&clickTrackInfo=query:vintage+jewellery+box;nid:457530251;src:LazadaMainSrp;rn:7e083b90ea3bd4d22374e66a3f28c0fd;region:pk;sku:457530251_PK;price:339;client:desktop;supplier_id:6005013990165;session_id:;biz_source:h5_external;slot:0;utlog_bucket_id:470687;asc_category_id:10001675;item_id:457530251;sku_id:4008977404;shop_id:662667;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=339&priceCompare=skuId:4008977404;source:lazada-search-voucher;sn:7e083b90ea3bd4d22374e66a3f28c0fd;originPrice:33900;displayPrice:33900;isGray:false;singlePromotionId:-1;singleToolCode:mockedSalePrice;voucherPricePlugin:0;timestamp:1786963909794&ratingscore=4.702075702075702&request_id=7e083b90ea3bd4d22374e66a3f28c0fd&review=818&sale=5432&search=1&source=search&spm=a2a0e.searchlist.list.0&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/f792ce9ad833e47280b821aafa5fdc0a.jpg_200x200q80.avif" alt="Vintage Leather Travel Jewellery Box" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Vintage Leather Travel Jewellery Box</div>
-          <div class="card-meta">
-            <span class="price">Rs. 339</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/f792ce9ad833e47280b821aafa5fdc0a.jpg_200x200q80.avif" alt="Vintage Leather Travel Jewellery Box" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Vintage Leather Travel Jewellery Box</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 339</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Mug: 500ML Floral Glass Cup -->
       <a class="card mug" data-cat="mug" href="https://www.daraz.pk/products/2025-500-i749822730-s3511644916.html?c=&channelLpJumpArgs=&clickTrackInfo=query:floral+water+bottles;nid:749822730;src:LazadaMainSrp;rn:277a91ad4bf252bda9c66963d1e61155;region:pk;sku:749822730_PK;price:1050;client:desktop;supplier_id:6005429888372;session_id:;biz_source:h5_external;slot:5;utlog_bucket_id:470687;asc_category_id:10000575;item_id:749822730;sku_id:3511644916;shop_id:2194391;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=1.05E 3&priceCompare=skuId:3511644916;source:lazada-search-voucher;sn:277a91ad4bf252bda9c66963d1e61155;originPrice:105000;displayPrice:105000;isGray:false;singlePromotionId:50000079021001;singleToolCode:promPrice;voucherPricePlugin:0;timestamp:1786964298573&ratingscore=5.0&request_id=277a91ad4bf252bda9c66963d1e61155&review=12&sale=42&search=1&source=search&spm=a2a0e.searchlist.list.5&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Mug</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/f55c6549fba90fc1cfdcf4dc5a689ed9.jpg_2200x2200q80.jpg_.webp" alt="500ML Floral Glass Cup" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">500ML Floral Glass Cup &amp; Straw Bottle</div>
-          <div class="card-meta">
-            <span class="price">Rs. 1,050</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Mug</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/f55c6549fba90fc1cfdcf4dc5a689ed9.jpg_2200x2200q80.jpg_.webp" alt="500ML Floral Glass Cup" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">500ML Floral Glass Cup &amp; Straw Bottle</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 1,050</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Mug: Electric USB Mug Warmer -->
       <a class="card mug" data-cat="mug" href="https://www.daraz.pk/products/-i267191289-s14023573401.html?c=&channelLpJumpArgs=&clickTrackInfo=query:mug+sets+gift;nid:267191289;src:LazadaMainSrp;rn:40bc604e6da3768ad5fa22919038907b;region:pk;sku:267191289_PK;price:1499;client:desktop;supplier_id:6005010765115;session_id:;biz_source:h5_external;slot:5;utlog_bucket_id:470687;asc_category_id:10000575;item_id:267191289;sku_id:14023573401;shop_id:341136;templateInfo:&freeshipping=1&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=1499&ratingscore=4.0&review=192&sale=679&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Mug</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/ab27e33d832f99ae05e6dc23d66c3f13.png_2200x2200q80.png_.webp" alt="Electric USB Mug Warmer Set" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Electric USB Mug Warmer Gift Set</div>
-          <div class="card-meta">
-            <span class="price">Rs. 1,499</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.0</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Mug</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/ab27e33d832f99ae05e6dc23d66c3f13.png_2200x2200q80.png_.webp" alt="Electric USB Mug Warmer Set" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Electric USB Mug Warmer Gift Set</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 1,499</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.0</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Mug: Stainless Steel Vacuum Flask Set -->
       <a class="card mug" data-cat="mug" href="https://www.daraz.pk/products/4-set-500ml-i588709581.html?spm=a2a0e.searchlist.list.29.11442b72Lp6zOB&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Mug</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/e0477c715c09b69b7f32b928c7c46bb8.jpg_800x800q75.avif" alt="Stainless Steel Vacuum Flask Set" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">4pcs Stainless Steel Vacuum Flask Gift Set</div>
-          <div class="card-meta">
-            <span class="price">See price on Daraz</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Mug</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/e0477c715c09b69b7f32b928c7c46bb8.jpg_800x800q75.avif" alt="Stainless Steel Vacuum Flask Set" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">4pcs Stainless Steel Vacuum Flask Gift Set</div>
+                <div class="card-meta">
+                  <span class="price">See price on Daraz</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Mug: Ceramic Coffee Mug -->
       <a class="card mug" data-cat="mug" href="https://www.daraz.pk/products/1-pcs-ceramic-coffee-mug-7oz123oz-microwave-dishwasher-safe-perfect-for-tea-coffee-reusable-kitchen-essential-gift-product-i648332913.html?spm=a2a0e.searchlist.list.31.11442b72Lp6zOB&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Mug</span>
-          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTSS2aTX_khS7Jl6TEq9k-oQNIpbY-8MeL5fvo6gVuSt6ugWp6v" alt="Ceramic Coffee Mug" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Classic Ceramic Coffee Mug</div>
-          <div class="card-meta">
-            <span class="price">See price on Daraz</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Mug</span>
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTSS2aTX_khS7Jl6TEq9k-oQNIpbY-8MeL5fvo6gVuSt6ugWp6v" alt="Ceramic Coffee Mug" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Classic Ceramic Coffee Mug</div>
+                <div class="card-meta">
+                  <span class="price">See price on Daraz</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Islamic Calligraphy Wall Art -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/dotz-brand-set-of-3-islamic-calligraphy-wall-art-sticky-wooden-canvas-frames-for-home-decore-sticky-phototiles-home-decorations-home-decoration-items-wall-art-wall-decorations-wooden-wall-art-wooden-photo-tiles-room-decoration-items-i930905671-s14013673937.html?c=&channelLpJumpArgs=&clickTrackInfo=query:wall+frames;nid:930905671;src:LazadaMainSrp;rn:eea76ef214139055a24d8d691490c7ae;region:pk;sku:930905671_PK;price:399;client:desktop;supplier_id:25594;session_id:;biz_source:h5_external;slot:38;utlog_bucket_id:470687;asc_category_id:10000426;item_id:930905671;sku_id:14013673937;shop_id:110561;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=399&ratingscore=4.947368421052632&review=19&sale=63&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://i.pinimg.com/736x/24/1f/a1/241fa141e18c13c3f91ec35b23e0342c.jpg" alt="Islamic Calligraphy Wall Art" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Islamic Calligraphy Wall Art (Set of 3)</div>
-          <div class="card-meta">
-            <span class="price">Rs. 399</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://i.pinimg.com/736x/24/1f/a1/241fa141e18c13c3f91ec35b23e0342c.jpg" alt="Islamic Calligraphy Wall Art" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Islamic Calligraphy Wall Art (Set of 3)</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 399</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Pink Honey Lip Mask -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/pink-honey-moisturizing-lip-mask-peach-natural-unisex-lip-oil-nourishing-fade-lip-lines-lip-care-i1948906249-s14012325166.html?pvid=7fcebec8-33c0-4097-9ec9-52213c4d2ef8&search=jfy&scm=1007.51705.413671.0&spm=a2a0e.tm80335142.just4u.d_1948906249&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXwVt_4_X1hvbz5Z9K3YTeikv32B2CoNT0Xy6gS2evYP6l41bD" alt="Pink Honey Lip Mask" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Pink Honey Moisturizing Lip Mask</div>
-          <div class="card-meta">
-            <span class="price">See price on Daraz</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXwVt_4_X1hvbz5Z9K3YTeikv32B2CoNT0Xy6gS2evYP6l41bD" alt="Pink Honey Lip Mask" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Pink Honey Moisturizing Lip Mask</div>
+                <div class="card-meta">
+                  <span class="price">See price on Daraz</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Leather Multicolor Wallet -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/best-leather-multicolor-wallet-for-men-stylish-leather-purse-for-men-for-all-occassion-i486775131-s2285335516.html?c=&channelLpJumpArgs=&clickTrackInfo=query:men+s+wallet;nid:486775131;src:LazadaMainSrp;rn:5417ff4d4f9a0c56c237820e04eb7026;region:pk;sku:486775131_PK;price:531;client:desktop;supplier_id:6005026368837;session_id:;biz_source:https://www.daraz.pk/;slot:0;utlog_bucket_id:470687;asc_category_id:10002040;item_id:486775131;sku_id:2285335516;shop_id:899694;templateInfo:&freeshipping=1&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=531&ratingscore=4.768437747819191&review=5044&sale=22622&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/8135f8ed70e8396f64c1c467ba73ce05.jpg_2200x2200q80.jpg_.webp" alt="Leather Multicolor Wallet" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Leather Multicolor Wallet for Men</div>
-          <div class="card-meta">
-            <span class="price">Rs. 531</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/8135f8ed70e8396f64c1c467ba73ce05.jpg_2200x2200q80.jpg_.webp" alt="Leather Multicolor Wallet" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Leather Multicolor Wallet for Men</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 531</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Watch Box Organizer -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/61012-i363781693-s3953502669.html?c=&channelLpJumpArgs=&clickTrackInfo=query:watches+box;nid:363781693;src:LazadaMainSrp;rn:815370215b65aecb66443fa3a9b0c604;region:pk;sku:363781693_PK;price:912;client:desktop;supplier_id:6005032326035;session_id:;biz_source:h5_external;slot:0;utlog_bucket_id:470687;asc_category_id:10001248;item_id:363781693;sku_id:3953502669;shop_id:953399;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=912&ratingscore=4.67906976744186&review=430&sale=2625&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/5f3865d5651014449298b64fc25603a2.jpg_2200x2200q80.jpg_.webp" alt="Watch Box Organizer" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Premium PU Leather Watch Box Organizer</div>
-          <div class="card-meta">
-            <span class="price">Rs. 912</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/5f3865d5651014449298b64fc25603a2.jpg_2200x2200q80.jpg_.webp" alt="Watch Box Organizer" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Premium PU Leather Watch Box Organizer</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 912</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Dragon Sword Bookmark -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/-i1958694584-s14021090132.html?c=&channelLpJumpArgs=&clickTrackInfo=query:dragon+bookmark;nid:1958694584;src:LazadaMainSrp;rn:ffbacdbced5c0b3a01807ae8ba60d749;region:pk;sku:1958694584_PK;price:1277;client:desktop;supplier_id:6005623312597;session_id:;biz_source:https://www.daraz.pk/;slot:1;utlog_bucket_id:470687;asc_category_id:10000717;item_id:1958694584;sku_id:14021090132;shop_id:2588891;templateInfo:&configId=choice_PK_promotion&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Overseas&price=1277&ratingscore=5.0&review=1&sale=15&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S40f306b25f514e158439ec1809d182c2h.jpg_2200x2200q80.jpg_.webp" alt="Dragon Sword Bookmark" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Fantasy Dragon Sword Bookmark</div>
-          <div class="card-meta">
-            <span class="price">Rs. 1,277</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S40f306b25f514e158439ec1809d182c2h.jpg_2200x2200q80.jpg_.webp" alt="Dragon Sword Bookmark" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Fantasy Dragon Sword Bookmark</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 1,277</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Black Paper Journal -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/-i425666013-s2018625887.html?c=&channelLpJumpArgs=&clickTrackInfo=query:black+pages+diary;nid:425666013;src:LazadaMainSrp;rn:217bfbfc9c82a8279a48d8240d60fbb3;region:pk;sku:425666013_PK;price:899;client:desktop;supplier_id:1128595;session_id:;biz_source:https://www.daraz.pk/;slot:4;utlog_bucket_id:470687;asc_category_id:10000654;item_id:425666013;sku_id:2018625887;shop_id:238295;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=899&ratingscore=4.778378378378378&review=185&sale=1019&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/Sdb39d27e5829467186f0932399185cf4S.jpg_800x800q75.avif" alt="Black Paper Journal" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Black Paper Hardcover Journal</div>
-          <div class="card-meta">
-            <span class="price">Rs. 899</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/Sdb39d27e5829467186f0932399185cf4S.jpg_800x800q75.avif" alt="Black Paper Journal" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Black Paper Hardcover Journal</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 899</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Makeup Storage Rack -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/3-1-i946630431-s4010884849.html?c=&channelLpJumpArgs=&clickTrackInfo=query:makeup+organizer;nid:946630431;src:LazadaMainSrp;rn:11941e0df9f32a70c073c5a35d1f846d;region:pk;sku:946630431_PK;price:657.76;client:desktop;supplier_id:6005475792118;session_id:;biz_source:h5_external;slot:9;utlog_bucket_id:470687;asc_category_id:1528;item_id:946630431;sku_id:4010884849;shop_id:2296507;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=657.76&ratingscore=4.869346733668341&review=199&sale=1578&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S622c1d08b7c14e8ebcce9083c4b7f11f7.jpg_2200x2200q80.jpg_.webp" alt="Makeup Storage Rack" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">3-Tier Makeup &amp; Perfume Storage Rack</div>
-          <div class="card-meta">
-            <span class="price">Rs. 658</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S622c1d08b7c14e8ebcce9083c4b7f11f7.jpg_2200x2200q80.jpg_.webp" alt="Makeup Storage Rack" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">3-Tier Makeup &amp; Perfume Storage Rack</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 658</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Chain Lace Choker Necklace -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/-i425747711.html?spm=a2a0e.searchlist.list.31.12bb39b92voCT6&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://m.media-amazon.com/images/I/61sszLPcF9L._AC_UY1000_.jpg" alt="Chain Lace Choker Necklace" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Gothic Chain Lace Choker Necklace</div>
-          <div class="card-meta">
-            <span class="price">Rs. 494</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://m.media-amazon.com/images/I/61sszLPcF9L._AC_UY1000_.jpg" alt="Chain Lace Choker Necklace" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Gothic Chain Lace Choker Necklace</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 494</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Vintage Chinese Metal Hairpin -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/-i1953901612-s14015452687.html?c=&channelLpJumpArgs=&clickTrackInfo=query:chinese+hairpin+metal;nid:1953901612;src:LazadaMainSrp;rn:6a16b2c304732441d8976767b95f734c;region:pk;sku:1953901612_PK;price:602;client:desktop;supplier_id:6005623312597;session_id:;biz_source:h5_external;slot:0;utlog_bucket_id:470687;asc_category_id:1852;item_id:1953901612;sku_id:14015452687;shop_id:2588891;templateInfo:&configId=choice_PK_promotion&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Overseas&price=602&ratingscore=5.0&review=13&sale=332&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S89c92e3a675b490ca69b656009466b3eb.jpg_2200x2200q80.jpg_.webp" alt="Vintage Chinese Metal Hairpin" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Vintage Chinese Metal Hairpin</div>
-          <div class="card-meta">
-            <span class="price">Rs. 602</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S89c92e3a675b490ca69b656009466b3eb.jpg_2200x2200q80.jpg_.webp" alt="Vintage Chinese Metal Hairpin" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Vintage Chinese Metal Hairpin</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 602</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Mr and Mrs Mugs Set -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/mr-and-mrs-mugs-set-wedding-gifts-for-couple-engagement-bridal-shower-gift-unique-anniversary-married-couple-gift-great-valentine-christmas-gift-ceramic-marble-coffee-cups-12oz-i347300740.html?sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://static-01.daraz.pk/p/bcf7c5d462bf06bc58876023cc24488a.jpg" alt="Mr and Mrs Mugs Set" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Mr &amp; Mrs Ceramic Marble Mug Set</div>
-          <div class="card-meta">
-            <span class="price">See price on Daraz</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://static-01.daraz.pk/p/bcf7c5d462bf06bc58876023cc24488a.jpg" alt="Mr and Mrs Mugs Set" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Mr &amp; Mrs Ceramic Marble Mug Set</div>
+                <div class="card-meta">
+                  <span class="price">See price on Daraz</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Metal Wall Grid -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/metal-wall-grid-65x45cm-for-hanging-photos-and-decor-study-room-display-i467032206-s2204339048.html?c=&channelLpJumpArgs=&clickTrackInfo=query:study+decor;nid:467032206;src:LazadaMainSrp;rn:4c0b95045c21ee4f0c87a5160cec469a;region:pk;sku:467032206_PK;price:998;client:desktop;supplier_id:6005013951228;session_id:;biz_source:https://www.daraz.pk/;slot:4;utlog_bucket_id:470687;asc_category_id:10000426;item_id:467032206;sku_id:2204339048;shop_id:654053;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=998&priceCompare=skuId:2204339048;source:lazada-search-voucher;sn:4c0b95045c21ee4f0c87a5160cec469a;originPrice:99800;displayPrice:99800;isGray:false;singlePromotionId:-1;singleToolCode:mockedSalePrice;voucherPricePlugin:0;timestamp:1787578774894&ratingscore=4.797169811320755&request_id=4c0b95045c21ee4f0c87a5160cec469a&review=424&sale=3325&search=1&source=search&spm=a2a0e.searchlist.list.4&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/37ff86f8fab2569c058be9f1920478a6.jpg_2200x2200q80.jpg_.webp" alt="Metal Wall Grid" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Metal Wall Grid 65x45cm Photo Display</div>
-          <div class="card-meta">
-            <span class="price">Rs. 998</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/37ff86f8fab2569c058be9f1920478a6.jpg_2200x2200q80.jpg_.webp" alt="Metal Wall Grid" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Metal Wall Grid 65x45cm Photo Display</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 998</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Three Fold Card Bag -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/-i670090849.html?spm=a2a0e.searchlist.list.7.42137349doeSXH&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S53709074e0064ffa8b0a720a50c9662bY.jpg_2200x2200q80.jpg_.webp" alt="Three Fold Card Bag" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Three Fold Card Bag — Mini Wallet Purse</div>
-          <div class="card-meta">
-            <span class="price">See price on Daraz</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/S53709074e0064ffa8b0a720a50c9662bY.jpg_2200x2200q80.jpg_.webp" alt="Three Fold Card Bag" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Three Fold Card Bag — Mini Wallet Purse</div>
+                <div class="card-meta">
+                  <span class="price">See price on Daraz</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Pad Bag / Sanitary Storage Pouch -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/-i911767720-s14014108689.html?c=&channelLpJumpArgs=&clickTrackInfo=query:Women+Portable+Sanitary+Pads+Storage+Bag;nid:911767720;src:LazadaMainSrp;rn:73aba6a4d2df3b54571f044ef945a6a8;region:pk;sku:911767720_PK;price:237;client:desktop;supplier_id:6005248768418;session_id:;biz_source:h5_external;slot:6;utlog_bucket_id:470687;asc_category_id:10001992;item_id:911767720;sku_id:14014108689;shop_id:1826507;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=237&priceCompare=skuId:14014108689;source:lazada-search-voucher;sn:73aba6a4d2df3b54571f044ef945a6a8;originPrice:23700;displayPrice:23700;isGray:false;singlePromotionId:-1;singleToolCode:mockedSalePrice;voucherPricePlugin:0;timestamp:1787589412632&ratingscore=4.835714285714285&request_id=73aba6a4d2df3b54571f044ef945a6a8&review=140&sale=727&search=1&source=search&spm=a2a0e.searchlist.list.6&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/Sef5a271c63d94d228f25c6240f6ec70c8.jpg_200x200q75.avif" alt="Pad Bag Sanitary Storage Pouch" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Waterproof Sanitary Pad Storage Pouch</div>
-          <div class="card-meta">
-            <span class="price">Rs. 237</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/Sef5a271c63d94d228f25c6240f6ec70c8.jpg_200x200q75.avif" alt="Pad Bag Sanitary Storage Pouch" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Waterproof Sanitary Pad Storage Pouch</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 237</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Cherry Keychain -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/-i911873061-s3953052012.html?c=&channelLpJumpArgs=&clickTrackInfo=query:cherry+keychain;nid:911873061;src:LazadaMainSrp;rn:af1f788258b61a1d131fabf7773e9173;region:pk;sku:911873061_PK;price:899;client:desktop;supplier_id:6005257488246;session_id:;biz_source:h5_external;slot:19;utlog_bucket_id:470687;asc_category_id:10001040;item_id:911873061;sku_id:3953052012;shop_id:1844962;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=899&priceCompare=skuId:3953052012;source:lazada-search-voucher;sn:af1f788258b61a1d131fabf7773e9173;originPrice:89900;displayPrice:89900;isGray:false;singlePromotionId:-1;singleToolCode:mockedSalePrice;voucherPricePlugin:0;timestamp:1787588546526&ratingscore=4.818181818181818&request_id=af1f788258b61a1d131fabf7773e9173&review=55&sale=399&search=1&source=search&spm=a2a0e.searchlist.list.19&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=wowbags.pk/cdn/shop/files/rn-image_picker_lib_temp_e2f289e8-6aa6-4490-856a-bedab35a9aed.jpg%3Fv=1776579711" alt="Dark Red Cherry Keychain" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Dark Red Cherry Keychain (Large)</div>
-          <div class="card-meta">
-            <span class="price">Rs. 899</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=wowbags.pk/cdn/shop/files/rn-image_picker_lib_temp_e2f289e8-6aa6-4490-856a-bedab35a9aed.jpg%3Fv=1776579711" alt="Dark Red Cherry Keychain" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Dark Red Cherry Keychain (Large)</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 899</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Stanley Tumbler Accessories Set -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/tumbler-accessories-56-pcs-stanley-cup-accessories-set-3040-stanley-tumbler-accessories-cute-accessories-for-stanley-tumbler-stanley-tumbler-charms-water-bottle-accessories-gifts-for-girls-i940305288-s3998931064.html?&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/0f2e861f9076658dad597ff18f8626c0.jpg_2200x2200q80.jpg_.webp" alt="Stanley Tumbler Accessories Set" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Stanley Tumbler Charms Accessories Set</div>
-          <div class="card-meta">
-            <span class="price">See price on Daraz</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/0f2e861f9076658dad597ff18f8626c0.jpg_2200x2200q80.jpg_.webp" alt="Stanley Tumbler Accessories Set" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Stanley Tumbler Charms Accessories Set</div>
+                <div class="card-meta">
+                  <span class="price">See price on Daraz</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Gift: Penguin Stuffed Toy -->
       <a class="card gift" data-cat="gift" href="https://www.daraz.pk/products/stuff-toy-cute-toy-cute-stuff-toy-soft-stuff-toy-penguin-stuff-toy-animal-stuff-toy-toy-stuff-toy-for-children-toy-for-girls-ultra-soft-stuff-toy-animal-toy-animal-stuff-toy-i561165341-s2596151979.html?pvid=196e4aa5-9239-400f-90d4-3a8f583e482a&search=jfy&scm=1007.51705.413671.0&spm=a2a0e.tm80335142.just4u.d_561165341&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Gift</span>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoVsntDEJvW2hfdDNXwjBRSabZFP75dY60FOdnky7G-w&s" alt="Penguin Stuffed Toy" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Cute Penguin Plush Toy 30cm</div>
-          <div class="card-meta">
-            <span class="price">See price on Daraz</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Gift</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoVsntDEJvW2hfdDNXwjBRSabZFP75dY60FOdnky7G-w&s" alt="Penguin Stuffed Toy" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Cute Penguin Plush Toy 30cm</div>
+                <div class="card-meta">
+                  <span class="price">See price on Daraz</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Pot Lid Holder -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/-i524010336-s2469364237.html?c=&channelLpJumpArgs=&clickTrackInfo=query:kitchen+organizers;nid:524010336;src:LazadaMainSrp;rn:94fa8523cb02ae6051529fe9d1c274d6;region:pk;sku:524010336_PK;price:659;client:desktop;supplier_id:3129;session_id:;biz_source:h5_external;slot:15;utlog_bucket_id:470687;asc_category_id:10000631;item_id:524010336;sku_id:2469364237;shop_id:85263;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=659&priceCompare=skuId:2469364237;source:lazada-search-voucher;sn:94fa8523cb02ae6051529fe9d1c274d6;originPrice:65900;displayPrice:65900;isGray:false;singlePromotionId:-1;singleToolCode:mockedSalePrice;voucherPricePlugin:0;timestamp:1787677833090&qSellingPoint=p--kitchen organizers&ratingscore=4.850174216027875&request_id=94fa8523cb02ae6051529fe9d1c274d6&review=287&sale=1623&search=1&source=search&spm=a2a0e.searchlist.list.15&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/9cbb3655886c9d2ab696aee116412a68.jpg_2200x2200q80.jpg_.webp" alt="Pot Lid Holder Kitchen Organizer" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Stainless Steel Pot Lid Holder Organizer</div>
-          <div class="card-meta">
-            <span class="price">Rs. 659</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/9cbb3655886c9d2ab696aee116412a68.jpg_2200x2200q80.jpg_.webp" alt="Pot Lid Holder Kitchen Organizer" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Stainless Steel Pot Lid Holder Organizer</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 659</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Boho Wooden Wall Decoration -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/-i933457284-s14010683905.html?c=&channelLpJumpArgs=&clickTrackInfo=query:drawing+room+decoration;nid:933457284;src:LazadaMainSrp;rn:2b6f6a2b3f7145a501408daffe507dc2;region:pk;sku:933457284_PK;price:299;client:desktop;supplier_id:6005014929052;session_id:;biz_source:h5_external;slot:8;utlog_bucket_id:470687;asc_category_id:10000426;item_id:933457284;sku_id:14010683905;shop_id:723737;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=299&priceCompare=skuId:14010683905;source:lazada-search-voucher;sn:2b6f6a2b3f7145a501408daffe507dc2;originPrice:29900;displayPrice:29900;isGray:false;singlePromotionId:-1;singleToolCode:mockedSalePrice;voucherPricePlugin:0;timestamp:1787716303445&ratingscore=4.846153846153846&request_id=2b6f6a2b3f7145a501408daffe507dc2&review=26&sale=118&search=1&source=search&spm=a2a0e.searchlist.list.8&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/44e34af841ef6ba57a59c8aa663a26a0.png_2200x2200q80.png_.webp" alt="Boho Wooden Wall Decoration" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Boho Wooden Wall Hanging Decor</div>
-          <div class="card-meta">
-            <span class="price">Rs. 299</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/static/pk/p/44e34af841ef6ba57a59c8aa663a26a0.png_2200x2200q80.png_.webp" alt="Boho Wooden Wall Decoration" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Boho Wooden Wall Hanging Decor</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 299</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Decor: Modern Arc Floor Lamp -->
       <a class="card decor" data-cat="decor" href="https://www.daraz.pk/products/67-led-i880809546-s3900702671.html?c=&channelLpJumpArgs=&clickTrackInfo=query:lamps;nid:880809546;src:LazadaMainSrp;rn:1176b7359b845b47632e712e39d22022;region:pk;sku:880809546_PK;price:4015;client:desktop;supplier_id:6005307792770;session_id:;biz_source:h5_external;slot:12;utlog_bucket_id:470687;asc_category_id:10000641;item_id:880809546;sku_id:3900702671;shop_id:1939780;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=4015&priceCompare=skuId:3900702671;source:lazada-search-voucher;sn:1176b7359b845b47632e712e39d22022;originPrice:401500;displayPrice:401500;isGray:false;singlePromotionId:50000079021001;singleToolCode:promPrice;voucherPricePlugin:0;timestamp:1787716626080&ratingscore=4.633333333333334&request_id=1176b7359b845b47632e712e39d22022&review=30&sale=134&search=1&source=search&spm=a2a0e.searchlist.list.12&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Decor</span>
-          <img src="https://i.pinimg.com/474x/47/5f/ef/475fefa8ad41c8445d55355143cb9ad2.jpg" alt="Modern Arc Floor Lamp" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">67" Modern Arc Floor Lamp LED</div>
-          <div class="card-meta">
-            <span class="price">Rs. 4,015</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.6</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Decor</span>
+                <img src="https://i.pinimg.com/474x/47/5f/ef/475fefa8ad41c8445d55355143cb9ad2.jpg" alt="Modern Arc Floor Lamp" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">67" Modern Arc Floor Lamp LED</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 4,015</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.6</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Mug: Stanley FlowState Tumbler -->
       <a class="card mug" data-cat="mug" href="https://www.daraz.pk/products/-i1960705004-s14031030289.html?c=&channelLpJumpArgs=&clickTrackInfo=query:stanley+cups;nid:1960705004;src:LazadaMainSrp;rn:817e3ef2f4847a1b9625f4514dac66db;region:pk;sku:1960705004_PK;price:2699;client:desktop;supplier_id:6005665552683;session_id:;biz_source:h5_external;slot:2;utlog_bucket_id:470687;asc_category_id:2470;item_id:1960705004;sku_id:14031030289;shop_id:2685773;templateInfo:&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Sindh&price=2699&priceCompare=skuId:14031030289;source:lazada-search-voucher;sn:817e3ef2f4847a1b9625f4514dac66db;originPrice:269900;displayPrice:269900;isGray:false;singlePromotionId:-1;singleToolCode:mockedSalePrice;voucherPricePlugin:0;timestamp:1787717866162&qSellingPoint=b--stanley___p--cups&ratingscore=5.0&request_id=817e3ef2f4847a1b9625f4514dac66db&review=19&sale=79&search=1&source=search&spm=a2a0e.searchlist.list.2&stock=1&sub_id1={transaction_id}&sub_aff_id={affiliate_id}" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Mug</span>
-          <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/Sd46e6330582d401e94585c5b9bbf28e1O.jpg_2200x2200q80.jpg_.webp" alt="Stanley FlowState Tumbler" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Stanley FlowState Tumbler with Straw</div>
-          <div class="card-meta">
-            <span class="price">Rs. 2,699</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Mug</span>
+                <img src="https://images.weserv.nl/?url=img.drz.lazcdn.com/g/kf/Sd46e6330582d401e94585c5b9bbf28e1O.jpg_2200x2200q80.jpg_.webp" alt="Stanley FlowState Tumbler" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Stanley FlowState Tumbler with Straw</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 2,699</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 5.0</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Etsy: Cozy Reading Chair Mug -->
       <a class="card mug" data-cat="mug" href="https://www.etsy.com/listing/4527349990/cozy-reading-chair-line-art-mug-accent?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_2&logging_key=3aa8165ba928025558b7ba177ec3c09cf7ce72da%3A4527349990" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Etsy</span>
-          <img src="https://images.weserv.nl/?url=i.etsystatic.com/66429875/r/il/85aa52/8221822981/il_794xN.8221822981_gqpd.jpg" alt="Cozy Reading Chair Line Art Mug" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Cozy Reading Chair Line Art Mug</div>
-          <div class="card-meta">
-            <span class="price">Shop on Etsy</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Etsy</span>
+                <img src="https://images.weserv.nl/?url=i.etsystatic.com/66429875/r/il/85aa52/8221822981/il_794xN.8221822981_gqpd.jpg" alt="Cozy Reading Chair Line Art Mug" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Cozy Reading Chair Line Art Mug</div>
+                <div class="card-meta">
+                  <span class="price">Shop on Etsy</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Etsy: Watercolor Heart Mug -->
       <a class="card mug" data-cat="mug" href="https://www.etsy.com/listing/4526779725/watercolor-heart-floral-border-mug?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_3&logging_key=65a9a3606d0f9893ddce8f968d922712cb929999%3A4526779725" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Etsy</span>
-          <img src="https://images.weserv.nl/?url=i.etsystatic.com/66429875/r/il/89a6c8/8170071976/il_794xN.8170071976_tmww.jpg" alt="Watercolor Heart Floral Border Mug" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-        <div class="card-body">
-          <div class="card-title">Watercolor Heart Floral Border Mug</div>
-          <div class="card-meta">
-            <span class="price">Shop on Etsy</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Etsy</span>
+                <img src="https://images.weserv.nl/?url=i.etsystatic.com/66429875/r/il/89a6c8/8170071976/il_794xN.8170071976_tmww.jpg" alt="Watercolor Heart Floral Border Mug" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Watercolor Heart Floral Border Mug</div>
+                <div class="card-meta">
+                  <span class="price">Shop on Etsy</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Etsy: WarmSipStudioCo -->
       <a class="card mug" data-cat="mug" href="https://www.etsy.com/shop/WarmSipStudioCo?ref=profile_header" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Etsy</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-title">WarmSip Studio Co — Etsy Mug Shop</div>
-          <div class="card-meta">
-            <span class="price">Shop on Etsy</span>
-          </div>
-          <div class="card-title">WarmSip Studio Co — Etsy Mug Shop</div>
-          <div class="card-meta">
-            <span class="price">Shop on Etsy</span>
-          </div>
-          <div class="cta">Visit Shop →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Etsy</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              </div>
+              <div class="card-body">
+                <div class="card-title">WarmSip Studio Co — Etsy Mug Shop</div>
+                <div class="card-meta">
+                  <span class="price">Shop on Etsy</span>
+                </div>
+                <div class="card-title">WarmSip Studio Co — Etsy Mug Shop</div>
+                <div class="card-meta">
+                  <span class="price">Shop on Etsy</span>
+                </div>
+                <div class="cta">Visit Shop <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- ============================================================
-           OUTFITS (affiliate links active — AliExpress Portals, approved 2026-10-19)
-      ============================================================ -->
-
+                 OUTFITS (affiliate links active — AliExpress Portals, approved 2026-10-19)
+            ============================================================ -->
       <!-- Outfit: Floral Summer Midi Dress -->
       <a class="card outfit" data-cat="outfit" href="https://s.click.aliexpress.com/e/_c4Nf60i9" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Outfit</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-.8 0-1.4.6-1.7 1.5L8 10l2.2 1.5L9 21h6l-1.2-9.5L16 10l-2.3-4.5C13.4 4.6 12.8 4 12 4z"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-title">Floral Summer Midi Dress</div>
-          <div class="card-meta">
-            <span class="price">Rs. 1,499</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Outfit</span>
+                <img src="images/outfit-1-floral-midi-dress.webp" alt="Floral Summer Midi Dress">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Floral Summer Midi Dress</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 1,499</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.8</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Outfit: Pastel Knit Cardigan -->
       <a class="card outfit" data-cat="outfit" href="https://s.click.aliexpress.com/e/_c4pQx0Cp" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Outfit</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-.8 0-1.4.6-1.7 1.5L8 10l2.2 1.5L9 21h6l-1.2-9.5L16 10l-2.3-4.5C13.4 4.6 12.8 4 12 4z"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-title">Pastel Knit Cardigan</div>
-          <div class="card-meta">
-            <span class="price">Rs. 1,199</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Outfit</span>
+                <img src="images/outfit-2-pastel-cardigan.webp" alt="Pastel Knit Cardigan">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Pastel Knit Cardigan</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 1,199</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.7</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Outfit: High-Waist Mom Jeans -->
       <a class="card outfit" data-cat="outfit" href="https://s.click.aliexpress.com/e/_c4MwsMtF" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Outfit</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-.8 0-1.4.6-1.7 1.5L8 10l2.2 1.5L9 21h6l-1.2-9.5L16 10l-2.3-4.5C13.4 4.6 12.8 4 12 4z"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-title">High-Waist Mom Jeans</div>
-          <div class="card-meta">
-            <span class="price">Rs. 1,799</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.6</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Outfit</span>
+                <img src="images/outfit-3-mom-jeans.webp" alt="High-Waist Mom Jeans">
+              </div>
+              <div class="card-body">
+                <div class="card-title">High-Waist Mom Jeans</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 1,799</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.6</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Outfit: Satin Slip Skirt -->
       <a class="card outfit" data-cat="outfit" href="https://s.click.aliexpress.com/e/_c3pwuA6d" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Outfit</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-.8 0-1.4.6-1.7 1.5L8 10l2.2 1.5L9 21h6l-1.2-9.5L16 10l-2.3-4.5C13.4 4.6 12.8 4 12 4z"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-title">Satin Slip Skirt</div>
-          <div class="card-meta">
-            <span class="price">Rs. 999</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Outfit</span>
+                <img src="images/outfit-4-satin-skirt.webp" alt="Satin Slip Skirt">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Satin Slip Skirt</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 999</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Outfit: Oversized Graphic Tee -->
       <a class="card outfit" data-cat="outfit" href="https://s.click.aliexpress.com/e/_c3QJ9X7L" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Outfit</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-.8 0-1.4.6-1.7 1.5L8 10l2.2 1.5L9 21h6l-1.2-9.5L16 10l-2.3-4.5C13.4 4.6 12.8 4 12 4z"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-title">Oversized Graphic Tee</div>
-          <div class="card-meta">
-            <span class="price">Rs. 699</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.5</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
+              <div class="thumb">
+                <span class="badge">Outfit</span>
+                <img src="images/outfit-5-graphic-tee.webp" alt="Oversized Graphic Tee">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Oversized Graphic Tee</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 699</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.5</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
 
       <!-- Outfit: Cozy Knit Two-Piece Set -->
       <a class="card outfit" data-cat="outfit" href="https://s.click.aliexpress.com/e/_c4Mpguzj" target="_blank" rel="noopener">
-        <div class="thumb">
-          <span class="badge">Outfit</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-.8 0-1.4.6-1.7 1.5L8 10l2.2 1.5L9 21h6l-1.2-9.5L16 10l-2.3-4.5C13.4 4.6 12.8 4 12 4z"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-title">Cozy Knit Two-Piece Set</div>
-          <div class="card-meta">
-            <span class="price">Rs. 2,199</span>
-            <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
-          </div>
-          <div class="cta">Shop Now →</div>
-        </div>
-      </a>
-
+              <div class="thumb">
+                <span class="badge">Outfit</span>
+                <img src="images/outfit-6-knit-set.webp" alt="Cozy Knit Two-Piece Set">
+              </div>
+              <div class="card-body">
+                <div class="card-title">Cozy Knit Two-Piece Set</div>
+                <div class="card-meta">
+                  <span class="price">Rs. 2,199</span>
+                  <span class="rating"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.8 4.2L15.9 19 10 15.6 4.1 19l1.7-7.2L1 7.6l6.4-.7z"/></svg> 4.9</span>
+                </div>
+                <div class="cta">Shop Now <span class="arrow">→</span></div>
+              </div>
+            </a>
     </div>
-  </div>
+  </main>
 
-  <div class="about">
-    <h2>About Sadaf Creates</h2>
-    <p>Hi, I'm Sadaf! ✨ I curate cute, aesthetic finds — thoughtful gifts, cozy home decor, pretty mugs, and outfits I love — all in one pretty place. Every pick is something I'd happily buy myself. Some links earn me a small commission at no extra cost to you. Happy browsing, darling! 💛</p>
-  </div>
+  <section class="about">
+    <p class="eyebrow">A little hello</p>
+    <h2>About Sadaf <em>Creates</em></h2>
+    <p>Hi, I'm Sadaf! &#x2728; I curate cute, aesthetic finds &mdash; thoughtful gifts, cozy home decor, pretty mugs, and outfits I love &mdash; all in one pretty place. Every pick is something I'd happily buy myself. Some links earn me a small commission at no extra cost to you. Happy browsing, darling! &#x1F49B;</p>
+  </section>
 
   <div class="social">
     <a href="https://www.pinterest.com/SadafFinds/" target="_blank" rel="noopener">
@@ -1258,7 +1244,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2026 Sadaf Creates · <a href="mailto:sadaf.farooqstudio@gmail.com">sadaf.farooqstudio@gmail.com</a></p>
+    <p>&copy; 2026 Sadaf Creates &middot; <a href="mailto:sadaf.farooqstudio@gmail.com">sadaf.farooqstudio@gmail.com</a></p>
     <p class="fine">As an affiliate, I earn from qualifying purchases made through links on this page.</p>
   </footer>
 
